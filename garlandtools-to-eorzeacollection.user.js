@@ -13,12 +13,15 @@
 // @grant        GM.addElement
 // ==/UserScript==
 
+
+
 (function () {
     'use strict';
 
     let items = document.getElementsByClassName("b-info-box-item-wrapper");
 
     for (let item of items) {
+        console.log(item)
         GM.xmlHttpRequest({
             responseType: "json",
             method: "GET",
@@ -33,7 +36,7 @@
                         href: "https://www.garlandtools.org/db/#item/" + responseData.ID,
                         style: "position:absolute;right:0;top:calc(50% - 26px);color:#636363;font-size:11px",
                     }).then(function (element) {
-                        element.text = "see in garland tools";
+                        element.text = "see in garland tools"
                     });
                 }
             }
